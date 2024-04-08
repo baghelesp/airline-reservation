@@ -5,6 +5,7 @@ import Searchbox from '../searchbar/Searchbox';
 import Carousel from '../carousel/Carousel';
 import Footer from '../footer/Footer';
 import Branding from '../branding/Branding';
+import ServiceTabs from '../services/ServiceTabs';
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +29,9 @@ function Home() {
             <source src="/bg-v.mp4" type="video/mp4"/>
         </video>
         <Searchbox/>
+        <div>
+          <ServiceTabs/>
+        </div>
         <div  style={{display:'flex', alignItems:'center', justifyContent:'center', margin:'30px'}}>
           <Carousel/>
         </div>
