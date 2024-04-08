@@ -1,0 +1,8 @@
+.navlink{
+    color: white;
+    padding: 15px;
+    margin: auto;
+}
+.active-link{
+    color: brown;
+}

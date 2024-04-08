@@ -1,0 +1,21 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 10px 20px;
+    transition: top 0.3s;
+  }
+  .heading{
+    font-size: 20px;
+  }
+  .navbar.hidden {
+    top: -100px; /* Adjust this value to hide the navbar completely */
+  }
+  a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+  }
