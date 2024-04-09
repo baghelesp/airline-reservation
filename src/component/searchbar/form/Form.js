@@ -2,7 +2,10 @@ import { useState } from 'react';
 import PassengerClass from './PassengerClass'
 import Menu from './Menu'
 import dayjs from 'dayjs';
-
+import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import LinearProgress from '@mui/material/LinearProgress';
+import Button from '@mui/material/Button';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -18,7 +21,10 @@ function Form()
 
     return (
         <>
-        
+        <Stack sx={{ width: '100%', color: 'grey.500', borderRadius:3 }} spacing={2}>
+      
+            <LinearProgress sx={{height:5}}  />
+        </Stack>
         <form style={{fontSize:"30px",display:'flex',}}>
             <div style={{display:'flex', margin:"5%", padding:"10px"}}>
             
@@ -28,12 +34,14 @@ function Form()
             
             <div><Menu/></div>
             <div>
-                <SearchBtn/>
+            <Button variant="contained">Search Flights</Button>
             </div>
             </div>
         </form>
     
         
+
+    
         
 
         </>

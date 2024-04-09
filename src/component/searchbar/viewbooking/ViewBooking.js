@@ -13,6 +13,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
+import { FaLocationDot } from "react-icons/fa6";
+import Fab from '@mui/material/Fab';
+
+import EditIcon from '@mui/icons-material/Edit';
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -118,13 +123,13 @@ export default function ViewBooking() {
                 duration
                </div>
                <div style={{display:'flex', width:'100%'}}>
-                <div>a</div>
-                <div style={{width:'90%'}}>
+                <div ><FaLocationDot/></div>
+                <div style={{width:'90%', margin:'10px 0px 0px 0px'}}>
                     
                 <hr/>
                 </div>
                 
-                <div>a</div>
+                <div><FaLocationDot/></div>
                </div>
                
             </div>
@@ -139,12 +144,22 @@ export default function ViewBooking() {
                 </div>
             </div>
             {/* date */}
-            <div>
+            <div style={{display:'flex', alignItems:'center'}}>
                <b> {data.dep_date}</b>
             </div>
             {/*  */}
-            <div>
+            <div style={{display:'flex', alignItems:'center'}}>
                { data.flightno}
+            </div>
+            <div>
+            <Fab color="secondary" aria-label="edit">
+              <EditIcon />
+            </Fab>
+            </div>
+            <div>
+            <Fab sx={{backgroundColor:'red'}} aria-label="edit">
+              <CloseIcon sx={{color:'white'}}/>
+            </Fab>
             </div>
           </div>
           <Divider/>
