@@ -13,6 +13,7 @@ import CustomizedTimeline from './pages/timeline/Timeline';
 import UpdateBooking from './component/searchbar/updatebooking/Updatebooking';
 import ViewBooking from './component/searchbar/viewbooking/ViewBooking';
 import Payment from './pages/payment/Payment';
+import Dashbboard from './pages/admin/dashboard/Dashboard';
 function App() {
   
   return (
@@ -41,6 +42,7 @@ function App() {
          {/* <Route exact path='/' element={<SeatBooking/>} ></Route> */}
          {/* <Route exact path='/' element={<CustomizedTimeline/>} ></Route> */}
          <Route exact path='/payment' element={<Payment/>}/>
+         <Route exact path='/admin' element={<Dashbboard/>}/>
         
       </Routes>
     </BrowserRouter>
