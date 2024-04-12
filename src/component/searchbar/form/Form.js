@@ -14,6 +14,7 @@ import TextField from '@mui/material/TextField';
 import SearchBtn from './SearchBtn';
 function Form()
 {
+    const [open,setOpen]=useState(false);
     const d=new Date()
     const curDate=`${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`
     const [source,setSource]=useState(" ");
@@ -21,10 +22,11 @@ function Form()
 
     return (
         <>
-        <Stack sx={{ width: '100%', color: 'grey.500', borderRadius:3 }} spacing={2}>
+        {open &&<Stack sx={{ width: '100%', color: 'grey.500', borderRadius:3 }} spacing={2}>
       
-            <LinearProgress sx={{height:5}}  />
-        </Stack>
+      <LinearProgress sx={{height:6}}  />
+  </Stack>}
+        
         <form style={{fontSize:"30px",display:'flex',}}>
             <div style={{display:'flex', margin:"5%", padding:"10px"}}>
             
@@ -34,7 +36,7 @@ function Form()
             
             <div><Menu/></div>
             <div>
-            <Button variant="contained">Search Flights</Button>
+            <Button variant="contained" onClick={()=>{setOpen(!open)}}>Search Flights</Button>
             </div>
             </div>
         </form>

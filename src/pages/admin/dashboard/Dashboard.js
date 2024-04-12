@@ -16,6 +16,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import Fab from '@mui/material/Fab';
 
 import EditIcon from '@mui/icons-material/Edit'
+import FormDialog from "../addflight/FormDialog";
 export default function Dashbboard() {
     const data=[{flightno:'A124', airline:'Indigo', dep_city:'Nagpur', arr_city:'Pune', dep_date:'24-03-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525},
     {flightno:'A124', airline:'Indigo', dep_city:'Nagpur', arr_city:'Pune', dep_date:'24-03-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525}]
@@ -40,7 +41,8 @@ export default function Dashbboard() {
                     <h1>Online Booking system for all service based industries</h1>
                     <p> If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. </p>
                     <div style={{marginTop:'3%'}}>
-                    <Button sx={{ background: 'purple' }} variant="contained">ADD Flight</Button>
+                    {/* <Button sx={{ background: 'purple' }} variant="contained" >ADD Flight</Button> */}
+                    <FormDialog/>
                     </div>
                     
 
@@ -49,10 +51,10 @@ export default function Dashbboard() {
                 {/* flight */}
                 <div style={{marginTop:'6%'}}>
                     <div>
-                        <h3>Todays flights</h3>
+                        <h2>Todays flights</h2>
                     </div>
-                    <div>
-                    <List>
+                    <div style={{backgroundColor:'rgb(0,0,0,0.3)', borderRadius:'10px', marginTop:'2%' }}>
+                    <List >
           {/* <ListItemButton>
             <ListItemText primary="Phone ringtone" secondary="Titania" />
           </ListItemButton>

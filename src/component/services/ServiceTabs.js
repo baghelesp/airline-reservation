@@ -73,8 +73,8 @@ const tab4=[{title:"Travel Assistance",text:'Delectable Preparation now on-board
 
   return (
     <div style={{margin:'4%'}}>
-    <Box sx={{ width: '100%' , background:'green', }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Box sx={{ width: '100%' , background:'#211C6A', }}>
+      <Box sx={{ borderBottom: 1,background:'white', borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Food & Beverages" {...a11yProps(0)} />
           <Tab label="Baggage" {...a11yProps(1)} />

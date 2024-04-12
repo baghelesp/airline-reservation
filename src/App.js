@@ -39,7 +39,7 @@ function App() {
 
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>} /> 
-         {/* <Route exact path='/' element={<SeatBooking/>} ></Route> */}
+         <Route exact path='/seatbooking' element={<SeatBooking/>} ></Route>
          {/* <Route exact path='/' element={<CustomizedTimeline/>} ></Route> */}
          <Route exact path='/payment' element={<Payment/>}/>
          <Route exact path='/admin' element={<Dashbboard/>}/>
