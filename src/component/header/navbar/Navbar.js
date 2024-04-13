@@ -36,7 +36,7 @@ function Navbar ()
             </div>
             
             <div style={{display:"flex"}}>
-                <div style={{margin:"auto"}}><a href="/login">Loin</a></div>
+                <div style={{margin:"auto"}}><a href="/login">Login</a></div>
                 <div style={{margin:"auto"}}><a href="/signup">Signup</a></div>
                 
             </div>

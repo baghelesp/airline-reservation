@@ -40,13 +40,13 @@ function a11yProps(index) {
 }
 
 export default function ServiceTabs() {
-  const tab1=[{title:"6E Eats",text:'Delectable Preparation now on-board. Booking Open', img:'/xyz'},
-  {title:"One for the skies", text:"Prebook your favourite alcoholic beverage", img:'/xyz'}
+  const tab1=[{title:"6E Eats",text:'Delectable Preparation now on-board. Booking Open', img:'/eats.avif'},
+  {title:"One for the skies", text:"Prebook your favourite alcoholic beverage", img:'/one.avif'}
 ]
-const tab2=[{title:"Excess Baggage",text:'Prebook any excess check-in baggeage and save up to 20%', img:''},
-  {title:"Delayed & Lost Baggage Protection", text:"Prebook your favourite alcoholic beverage", img:''},
-  {title:"Sports Equipment", text:"Prebook your favourite alcoholic beverage", img:''},
-  {title:"Carter Porter", text:"Prebook your favourite alcoholic beverage", img:''}
+const tab2=[{title:"Excess Baggage",text:'Prebook any excess check-in baggeage and save up to 20%', img:'/bag1.avif'},
+  {title:"Delayed & Lost Baggage Protection", text:"Prebook your favourite alcoholic beverage", img:'/bag2.avif'},
+  {title:"Sports Equipment", text:"Prebook your favourite alcoholic beverage", img:'/bag3.avif'},
+  {title:"Carter Porter", text:"Prebook your favourite alcoholic beverage", img:'/one.avif'}
 ]
 const tab3=[{title:"Fast Forward",text:'Delectable Preparation now on-board. Booking Open', img:''},
   {title:"Lounge Service", text:"Prebook your favourite alcoholic beverage", img:''}

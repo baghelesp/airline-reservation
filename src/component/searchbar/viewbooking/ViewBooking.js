@@ -15,6 +15,7 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import Fab from '@mui/material/Fab';
+import Avatar from '@mui/material/Avatar';
 
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -23,8 +24,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function ViewBooking() {
-    const data=[{flightno:'A124', airline:'Indigo', dep_city:'Nagpur', arr_city:'Pune', dep_date:'24-03-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525},
-    {flightno:'A124', airline:'Indigo', dep_city:'Nagpur', arr_city:'Pune', dep_date:'24-03-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525}]
+    const data=[{flightno:'A124', airline:'Indigo', dep_city:'Mumbai', arr_city:'Nagpur', dep_date:'26-05-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525},
+    {flightno:'A125', airline:'Indigo', dep_city:'Nagpur', arr_city:'Mumbai', dep_date:'24-05-24', arr_date:'24:03-24', dep_time:'15:00', arr_time:'16:25', class_type:'Business', noOdAdults:1, noOfChilds:1,total_fare:6525}]
   const [open, setOpen] = React.useState(false);
   const [bookingNo, setBookingNo] = useState(null);
   const [name, setName] = useState(null);
@@ -105,7 +106,8 @@ export default function ViewBooking() {
                 <>
                 <div style={{display:'flex', alignContent:'center', justifyContent:'space-between', margin:'2%'}}>
             <div>
-            <img src='' alt='x'/>
+            <Avatar alt="Travis Howard" src="/indigo.png" />
+
             <h4>{data.airline}</h4>
             </div>
             <div>

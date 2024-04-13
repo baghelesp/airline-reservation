@@ -1,7 +1,7 @@
 import Home from "../Home/Home";
 import SideBar from "../sidebar/SideBar";
 import Button from '@mui/material/Button';
-import SearchBtn from "./SearchBtn";
+import SearchBtn from "./searchbar/SearchBtn";
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
@@ -11,12 +11,17 @@ import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import TextField from '@mui/material/TextField';
+import Avatar from '@mui/material/Avatar';
+import Badge from '@mui/material/Badge';
+
 import { useState } from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import Fab from '@mui/material/Fab';
-
+import PeopleIcon from '@mui/icons-material/People';
 import EditIcon from '@mui/icons-material/Edit'
 import FormDialog from "../addflight/FormDialog";
+import SearchBar from "../report/SearchBar";
+import PassengerList from "./PassengerList";
 export default function Dashbboard() {
     const data=[{flightno:'A124', airline:'Indigo', dep_city:'Nagpur', arr_city:'Pune', dep_date:'24-03-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525},
     {flightno:'A124', airline:'Indigo', dep_city:'Nagpur', arr_city:'Pune', dep_date:'24-03-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525}]
@@ -32,6 +37,7 @@ export default function Dashbboard() {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div>
                         <SearchBtn />
+                        {/* <SearchBar/> */}
                     </div>
                     <div>
                         icon, icon
@@ -70,7 +76,7 @@ export default function Dashbboard() {
                 <>
                 <div style={{display:'flex', alignContent:'center', justifyContent:'space-between', margin:'2%'}}>
             <div>
-            <img src='' alt='x'/>
+            <Avatar alt="Travis Howard" src="/indigo.png" />
             <h4>{data.airline}</h4>
             </div>
             <div>
@@ -117,13 +123,21 @@ export default function Dashbboard() {
                { data.flightno}
             </div>
             <div>
+            {/* <Fab color="primary" aria-label="edit">
+            <Badge badgeContent={4} color="secondary">
+            
+              <PeopleIcon />
+            </Badge></Fab> */}
+            <PassengerList/>
+            </div>
+            <div>
             <Fab color="secondary" aria-label="edit">
               <EditIcon />
             </Fab>
             </div>
            
           </div>
-          <Divider/>
+          <Divider sx={{background:'white',color:'white'}}/>
           </>
             ))
           }
