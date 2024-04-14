@@ -14,6 +14,7 @@ import UpdateBooking from './component/searchbar/updatebooking/Updatebooking';
 import ViewBooking from './component/searchbar/viewbooking/ViewBooking';
 import Payment from './pages/payment/Payment';
 import Dashbboard from './pages/admin/dashboard/Dashboard';
+import ExecutiveDashbboard from './pages/airline-executive/ExecutiveDashboard';
 function App() {
   
   return (
@@ -43,6 +44,7 @@ function App() {
          {/* <Route exact path='/' element={<CustomizedTimeline/>} ></Route> */}
          <Route exact path='/payment' element={<Payment/>}/>
          <Route exact path='/admin' element={<Dashbboard/>}/>
+         <Route exact path='/airline-executive' element={<ExecutiveDashbboard/>}/>
         
       </Routes>
     </BrowserRouter>

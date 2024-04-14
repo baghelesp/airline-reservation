@@ -8,23 +8,18 @@ import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import SelectFilterOptions from './SelectFilterOptions';
 import { useState } from 'react';
-import FlightList from '../flight/FlightList';
 
 
-export default function SearchBtn(p) {
+export default function SearchBtn() {
   const [filter,setFilter]=useState('flightno');
   const [input,setInput]=useState(null);
-  // const [openRes,setOpenRes]=useState(false);
   const handleChange=(e)=>{
     setInput(e.target.value);
     console.log(e.target.value)
 
   }
   const handleSearch=(e)=>{
-    p.setOpenBackDrop(true)
     console.log("filter : "+filter+", input : "+input);
-    setTimeout(()=>{p.setOpenBackDrop(false); p.setOpenRes(true)},3000)
-    // p.setOpenRes(true)
   }
   return (
     <Paper
@@ -48,7 +43,6 @@ export default function SearchBtn(p) {
       </IconButton>
       <IconButton type="button" onClick={handleSearch} sx={{ p: '10px' }} aria-label="search">
         <SearchIcon sx={{fontSize:'30px'}} />
-        
       </IconButton>
     </Paper>
   );
