@@ -16,18 +16,22 @@ import { useState } from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import Fab from '@mui/material/Fab';
 import Avatar from '@mui/material/Avatar';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 import EditIcon from '@mui/icons-material/Edit';
+import PassengerList from '../PassengerList';
+import CancleFLight from './CancleFlight';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function FlightList(p) {
-    const data=[{flightno:'A124', airline:'Indigo', dep_city:'Mumbai', arr_city:'Nagpur', dep_date:'26-05-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525},
-    {flightno:'A125', airline:'Indigo', dep_city:'Nagpur', arr_city:'Mumbai', dep_date:'24-05-24', arr_date:'24:03-24', dep_time:'15:00', arr_time:'16:25', class_type:'Business', noOdAdults:1, noOfChilds:1,total_fare:6525}]
+    // const data=[{flightno:'A124', airline:'Indigo', dep_city:'Mumbai', arr_city:'Nagpur', dep_date:'26-05-24', arr_date:'24:03-24', dep_time:'17:00', arr_time:'18:05', class_type:'economy', noOdAdults:1, noOfChilds:1,total_fare:6525},
+    // {flightno:'A125', airline:'Indigo', dep_city:'Nagpur', arr_city:'Mumbai', dep_date:'24-05-24', arr_date:'24:03-24', dep_time:'15:00', arr_time:'16:25', class_type:'Business', noOdAdults:1, noOfChilds:1,total_fare:6525}]
   
-
+  const[openSB,setOpenSB]=useState(false);
   const handleClickOpen = () => {
     p.setOpenRes(true);
   };
@@ -37,6 +41,10 @@ export default function FlightList(p) {
     p.setOpenRes(!p.openRes);
     console.log(p.openRes)
   };
+  const handleSnackBarClose=()=>{
+    setOpenSB(false)
+    p.setOpenRes(false)
+}
 
   return (
     <React.Fragment>  
@@ -46,6 +54,19 @@ export default function FlightList(p) {
         onClose={handleClose}
         TransitionComponent={Transition}
       >
+         <Snackbar 
+                    open={openSB} 
+                    anchorOrigin={{vertical:'top',horizontal:'center'}}
+                    autoHideDuration={2000} onClose={handleSnackBarClose}>
+                    <Alert
+                        
+                        severity="success"
+                        variant="filled"
+                        sx={{ width: '100%' }}
+                    >
+                        Successfully Deleted!
+                    </Alert>
+                </Snackbar>
         <AppBar sx={{ position: 'relative' }}>
           <Toolbar>
             <IconButton
@@ -65,20 +86,11 @@ export default function FlightList(p) {
           </Toolbar>
         </AppBar>
         <List>
-          {/* <ListItemButton>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
-          </ListItemButton> */}
+          
           {
-            data.map((data,index)=>(
+            p.data.map((data,index)=>(
                 <>
-                <div style={{display:'flex', alignContent:'center', justifyContent:'space-between', margin:'2%'}}>
+                <div key={index} style={{display:'flex', alignContent:'center', justifyContent:'space-between', margin:'2%'}}>
             <div>
             <Avatar alt="Travis Howard" src="/indigo.png" />
 
@@ -128,14 +140,18 @@ export default function FlightList(p) {
                { data.flightno}
             </div>
             <div>
+            <PassengerList />
+            </div>
+            <div>
             <Fab color="secondary" aria-label="edit">
               <EditIcon />
             </Fab>
             </div>
-            <div>
-            <Fab sx={{backgroundColor:'red'}} aria-label="edit">
-              <CloseIcon sx={{color:'white'}}/>
-            </Fab>
+            <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+            {/* <Fab>
+              <CloseIcon sx={{color:'red'}}/>
+            </Fab> */}
+            <CancleFLight data={data} setOpenRes={p.setOpenRes} setOpenSB={setOpenSB}/>
             </div>
           </div>
           <Divider/>

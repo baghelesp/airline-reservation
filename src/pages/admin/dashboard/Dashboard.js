@@ -26,11 +26,13 @@ import FlightList from "./flight/FlightList";
 export default function Dashbboard() {
     const [openRes, setOpenRes] = useState(false);
     const [openBackDrop, setOpenBackDrop] = useState(false);
+    const data = [{ flightno: 'A124', airline: 'Indigo', dep_city: 'Nagpur', arr_city: 'Pune', dep_date: '24-03-24', arr_date: '24:03-24', dep_time: '17:00', arr_time: '18:05', class_type: 'economy', noOdAdults: 1, noOfChilds: 1, total_fare: 6525 },
+    { flightno: 'A124', airline: 'Indigo', dep_city: 'Nagpur', arr_city: 'Pune', dep_date: '24-03-24', arr_date: '24:03-24', dep_time: '17:00', arr_time: '18:05', class_type: 'economy', noOdAdults: 1, noOfChilds: 1, total_fare: 6525 }]
+    const [flightData,setFlightData]=useState(data);
     const handleBackDropClose = () => {
         setOpenBackDrop(false);
       };
-    const data = [{ flightno: 'A124', airline: 'Indigo', dep_city: 'Nagpur', arr_city: 'Pune', dep_date: '24-03-24', arr_date: '24:03-24', dep_time: '17:00', arr_time: '18:05', class_type: 'economy', noOdAdults: 1, noOfChilds: 1, total_fare: 6525 },
-    { flightno: 'A124', airline: 'Indigo', dep_city: 'Nagpur', arr_city: 'Pune', dep_date: '24-03-24', arr_date: '24:03-24', dep_time: '17:00', arr_time: '18:05', class_type: 'economy', noOdAdults: 1, noOfChilds: 1, total_fare: 6525 }]
+    
 
     return <>
         <div style={{ display: 'flex', width: '100vw' }}>
@@ -42,7 +44,8 @@ export default function Dashbboard() {
                 <img style={{ zIndex: '-1', position: 'fixed', right: '0px', padding: '6%' }} width={'50%'} src="/planeTBg.png" />
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     {/* Search Result Component */}
-                    <FlightList openRes={openRes} setOpenRes={setOpenRes} />
+                    <FlightList openRes={openRes} data={flightData}  setOpenRes={setOpenRes} />
+                    {/* On Search BackDRop functionality */}
                     <Backdrop
                         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
                         open={openBackDrop}
@@ -51,7 +54,7 @@ export default function Dashbboard() {
                         <CircularProgress color="inherit" />
                     </Backdrop>
                     <div>
-                        <SearchBtn openRes={openRes} setOpenBackDrop={setOpenBackDrop} setOpenRes={setOpenRes} />
+                        <SearchBtn openRes={openRes} setFlightData={setFlightData} setOpenBackDrop={setOpenBackDrop} setOpenRes={setOpenRes} />
                         {/* <SearchBar/> */}
                     </div>
                     <div>
