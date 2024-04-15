@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css'; 
+import Loginn from '../../../pages/Login/Loginn';
 function Navbar ()
 {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -36,7 +37,8 @@ function Navbar ()
             </div>
             
             <div style={{display:"flex"}}>
-                <div style={{margin:"auto"}}><a href="/login">Login</a></div>
+              <Loginn/>
+                {/* <div style={{margin:"auto"}}><a href="/login">Login</a></div> */}
                 <div style={{margin:"auto"}}><a href="/signup">Signup</a></div>
                 
             </div>
