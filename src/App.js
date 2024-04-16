@@ -16,6 +16,7 @@ import Payment from './pages/payment/Payment';
 import Dashbboard from './pages/admin/dashboard/Dashboard';
 import ExecutiveDashbboard from './pages/airline-executive/ExecutiveDashboard';
 import EnterPassenger from './pages/passenger/EnterPassenger';
+import Success from './pages/successfullbooking/Success';
 function App() {
   
   return (
@@ -46,7 +47,9 @@ function App() {
          <Route exact path='/payment' element={<Payment/>}/>
          <Route exact path='/admin' element={<Dashbboard/>}/>
          <Route exact path='/airline-executive' element={<ExecutiveDashbboard/>}/>
-        <Route exact path='/passenger' element={<EnterPassenger/>}/>
+        <Route exact path='/passenger' element={<EnterPassenger/>}/>        
+        <Route exact path='/success' element={<Success/>}/>
+
       </Routes>
     </BrowserRouter>
     </div>
