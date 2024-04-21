@@ -21,68 +21,15 @@ import Fab from '@mui/material/Fab';
 import PeopleIcon from '@mui/icons-material/People';
 import EditIcon from '@mui/icons-material/Edit'
 import FormDialog from "../addflight/FormDialog";
-import PassengerList from "./PassengerList";
-import FlightList from "./flight/FlightList";
-export default function Dashbboard() {
-    const [openRes, setOpenRes] = useState(false);
-    const [openBackDrop, setOpenBackDrop] = useState(false);
-    const [active,setActive]=useState(2);
-    const data = [{ flightno: 'A124', airline: 'Indigo', dep_city: 'Nagpur', arr_city: 'Pune', dep_date: '24-03-24', arr_date: '24:03-24', dep_time: '17:00', arr_time: '18:05', class_type: 'economy', noOdAdults: 1, noOfChilds: 1, total_fare: 6525 },
-    { flightno: 'A124', airline: 'Indigo', dep_city: 'Nagpur', arr_city: 'Pune', dep_date: '24-03-24', arr_date: '24:03-24', dep_time: '17:00', arr_time: '18:05', class_type: 'economy', noOdAdults: 1, noOfChilds: 1, total_fare: 6525 }]
-    const [flightData,setFlightData]=useState(data);
-    const handleBackDropClose = () => {
-        setOpenBackDrop(false);
-      };
-    
+import PassengerList from "../admin/dashboard/PassengerList";
 
-    return <>
-        <div style={{ display: 'flex', width: '100vw' }}>
-            <div style={{ width: '20%' }}>
-                <SideBar />
-
-            </div>
-            <div style={{ width: '80%', height: '100vh', padding: '2%', color: 'white', overflowY: 'hidden' }}>
-                <img style={{ zIndex: '-1', position: 'fixed', right: '0px', padding: '6%' }} width={'50%'} src="/planeTBg.png" />
-
-                {active===1 &&
-                <>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    {/* Search Result Component */}
-                    <FlightList openRes={openRes} data={flightData}  setOpenRes={setOpenRes} />
-                    {/* On Search BackDRop functionality */}
-                    <Backdrop
-                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                        open={openBackDrop}
-                        // onClick={handleBackDropClose}
-                    >
-                        <CircularProgress color="inherit" />
-                    </Backdrop>
+export default function Booking()
+{
+    return(<>
+    {/* flight */}
+    <div style={{ marginTop: '6%' }}>
                     <div>
-                        <SearchBtn openRes={openRes} setFlightData={setFlightData} setOpenBackDrop={setOpenBackDrop} setOpenRes={setOpenRes} />
-                        {/* <SearchBar/> */}
-                    </div>
-                    <div>
-                        icon, icon
-                    </div>
-                </div>
-                <div style={{ width: '50%', marginTop: '3%' }}>
-                    <h1>Online Booking system for all service based industries</h1>
-                    <p> If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. </p>
-                    <div style={{ marginTop: '3%' }}>
-                        {/* <Button sx={{ background: 'purple' }} variant="contained" >ADD Flight</Button> */}
-                        <FormDialog />
-                    </div>
-
-
-                </div>
-                </>
-}
-
-                {/* flight */}
-                {active===2 &&<>
-                <div style={{ marginTop: '6%' }}>
-                    <div>
-                        <h2>Booking Details</h2>
+                        <h2>Todays flights</h2>
                     </div>
                     <div style={{ backgroundColor: 'rgb(0,0,0,0.3)', borderRadius: '10px', marginTop: '2%' }}>
                         <List >
@@ -103,9 +50,6 @@ export default function Dashbboard() {
                                             <div>
                                                 <Avatar alt="Travis Howard" src="/indigo.png" />
                                                 <h4>{data.airline}</h4>
-                                            </div>
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                {data.flightno}
                                             </div>
                                             <div>
                                                 <div>
@@ -147,7 +91,9 @@ export default function Dashbboard() {
                                                 <b> {data.dep_date}</b>
                                             </div>
                                             {/*  */}
-                                            
+                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                {data.flightno}
+                                            </div>
                                             <div>
                                                 {/* <Fab color="primary" aria-label="edit">
             <Badge badgeContent={4} color="secondary">
@@ -171,14 +117,5 @@ export default function Dashbboard() {
                         </List>
                     </div>
                 </div>
-                </>}
-
-
-
-            </div>
-
-        </div>
-
-
-    </>
+    </>)
 }

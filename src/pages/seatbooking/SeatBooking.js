@@ -2,7 +2,9 @@ import './SeatBooking.scss'
 function SeatBooking()
 {
     return(<>
+    
     <div class="aircraft" style={{backgroundColor:'white'}}>
+      
   <div class="aircraft-body">
     <div class="top-left-exists">
       <img src="https://i.ibb.co/ftwgLCL/exist.png"/>

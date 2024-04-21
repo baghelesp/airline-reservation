@@ -1,0 +1,60 @@
+// .navlink{
+//     color: white;
+//     padding: 15px;
+//     margin: auto;
+// }
+
+/* .navlink:hover{
+    color: blue;
+    text-shadow: blue;
+} */
+
+$primary: #ffffff;
+$secondary: #819cff;
+
+.navlink {
+    position: relative;
+    
+    cursor: pointer;
+    padding: 0 10px;
+    transition: .6s;
+    
+    &:hover {
+      color: $secondary;
+      transition: .6s;
+    }
+  }
+  
+  .navlink:before, .navlink:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    top: 100%;
+    margin-top: -0.5px;
+    background: $secondary;
+  }
+  
+  
+  .navlink:before {
+    left: -2.5px;
+  }
+  
+  .navlink:after {
+    right: 2.5px;
+    background: $secondary;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .navlink:hover:before {
+    background: $secondary;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .navlink:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+    color: $secondary;
+  }

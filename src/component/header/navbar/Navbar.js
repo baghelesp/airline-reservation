@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Navbar.css'; 
+import './Navbar.scss'; 
 import Loginn from '../../../pages/Login/Loginn';
 function Navbar ()
 {
@@ -25,15 +25,15 @@ function Navbar ()
         </div>
         <div>
             <nav style={{display:"flex", margin:"auto" ,padding:"15px"}}>
-                <div style={{margin:"auto"}}><a href="">Explore</a></div>
-                <div style={{margin:"auto"}}><a href="">Book</a></div>
-                <div style={{margin:"auto"}}><a href="">Experience</a></div>
-                <div style={{margin:"auto"}}><a href="">Privilege Club</a></div>  
+                <div style={{margin:"auto"}}><a href=""><span className='link'>Explore</span></a></div>
+                <div style={{margin:"auto"}}><a href=""><span className='link'>Book</span></a></div>
+                <div style={{margin:"auto"}}><a href=""><span className='link'>Experience</span></a></div>
+                <div style={{margin:"auto"}}><a href=""><span className='link'>Privilege Club</span></a></div>  
             </nav>
         </div>
         <div style={{display:"flex", margin:"auto", }}>
             <div>
-            <a href="">Help</a>
+            <a href="" className='link'>Help</a>
             </div>
             
             <div style={{display:"flex"}}>

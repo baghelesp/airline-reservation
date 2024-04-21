@@ -29,7 +29,8 @@ export default function ViewBooking() {
   const [open, setOpen] = React.useState(false);
   const [bookingNo, setBookingNo] = useState(null);
   const [name, setName] = useState(null);
- 
+  
+  const[active,setActive]=useState(1)
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -85,11 +86,22 @@ export default function ViewBooking() {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               Your Bookings
             </Typography>
+            <Typography sx={{ ml: 2, flex: 2 }} variant="h6" component="div">
+            <Button autoFocus color="inherit" style={{ color:active===1?'blue':'white',backgroundColor:active===1 ?'rgb(255,255,255,0.8)':'', textDecoration:active===1?'underline':'none' }} onClick={()=>{setActive(1)}}>
+              upcomming Bookings
+            </Button>
+            <Button autoFocus color="inherit" style={{ color:active===2?'blue':'white', backgroundColor:active===2 ?'rgb(255,255,255,0.8)':'' ,textDecoration:active===2?'underline':'none' }} onClick={()=>{setActive(2)}}>
+              previous bookings
+            </Button>
+            </Typography>
+            
             <Button autoFocus color="inherit" onClick={handleClose}>
               Close
             </Button>
           </Toolbar>
         </AppBar>
+       
+       {active===1 &&
         <List>
           {/* <ListItemButton>
             <ListItemText primary="Phone ringtone" secondary="Titania" />
@@ -170,6 +182,7 @@ export default function ViewBooking() {
           }
           
         </List>
+}
       </Dialog>
     </React.Fragment>
   );

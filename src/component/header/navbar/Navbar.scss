@@ -1,0 +1,71 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 10px 20px;
+    transition: top 0.3s;
+  }
+  .heading{
+    font-size: 20px;
+  }
+  .navbar.hidden {
+    top: -100px; /* Adjust this value to hide the navbar completely */
+  }
+  a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+  }
+
+  $primary: #ffffff;
+$secondary: #819cff;
+
+.link {
+    position: relative;
+    
+    cursor: pointer;
+    padding: 0 10px;
+    transition: .6s;
+    
+    &:hover {
+      color: $secondary;
+      transition: .6s;
+    }
+  }
+  
+  .link:before, .link:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    top: 100%;
+    margin-top: -0.5px;
+    background: $secondary;
+  }
+  
+  
+  .link:before {
+    left: -2.5px;
+  }
+  
+  .link:after {
+    right: 2.5px;
+    background: $secondary;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .link:hover:before {
+    background: $secondary;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .link:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+    color: $secondary;
+  }

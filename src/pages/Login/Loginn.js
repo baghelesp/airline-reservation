@@ -21,7 +21,7 @@ export default function Loginn() {
   };
 
   const DrawerList = (
-    <Box sx={{ width: '30vw' }} role="presentation" > 
+    <Box sx={{ width: '30vw' ,}} role="presentation" > 
     {/* onClick={toggleDrawer(false)} */}
       
       {/* <Divider /> */}
@@ -30,8 +30,9 @@ export default function Loginn() {
         
 
            
-                <div style={{height:'100%',width:'100%',display:"flex", padding:'10px',flexDirection:'column',  alignItems:'center'}}>
-                    <h2 style={{margin:'auto'}}>Begin a Journey</h2>
+                <div style={{height:'100%', borderRadius:'1%',width:'100%',display:"flex", padding:'10px',flexDirection:'column',  alignItems:'center'}}>
+                    <h2 style={{margin:'auto',zIndex:'2'}}>Begin a Journey</h2>
+                    <img style={{left:'0px', zIndex:'1',position:'fixed', width:'10%'}} src="/planeTBg.png"/>
                         <form style={{paddingTop:'20px ', height:'100%',display:'flex',flexDirection:'column',alignItems:'center', justifyContent:'space-evenly'}}>
                             <div style={{}}>
                             <TextField
