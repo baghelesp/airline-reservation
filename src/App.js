@@ -17,6 +17,7 @@ import Dashbboard from './pages/admin/dashboard/Dashboard';
 import ExecutiveDashbboard from './pages/airline-executive/ExecutiveDashboard';
 import EnterPassenger from './pages/passenger/EnterPassenger';
 import Success from './pages/successfullbooking/Success';
+import AvailableFlight from './pages/availableflights/AvailableFlight';
 function App() {
   
   return (
@@ -49,6 +50,7 @@ function App() {
          <Route exact path='/airline-executive' element={<ExecutiveDashbboard/>}/>
         <Route exact path='/passenger' element={<EnterPassenger/>}/>        
         <Route exact path='/success' element={<Success/>}/>
+        <Route exact path='/availableflight' element={<AvailableFlight/>}/>
 
       </Routes>
     </BrowserRouter>

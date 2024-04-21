@@ -19,7 +19,9 @@ function Navbar ()
   }, []);
     return <>
     <div className={scrollPosition > 180 ? 'navbar hidden' : 'navbar'} style={{zIndex:99 ,display:"flex", padding:"10px",color: 'rgba(255, 255, 255,1)' , backgroundColor: 'rgba(255, 255, 255, 0.2)' }}>
+      
         <div className='heading' style={{margin:"auto",padding:"15px"}}> 
+        {/* <img src='/logo-black.png' style={{height:'50px'}}/> */}
             Archtype
             <span>Airline</span>
         </div>

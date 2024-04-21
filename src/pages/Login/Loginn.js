@@ -25,17 +25,19 @@ export default function Loginn() {
     {/* onClick={toggleDrawer(false)} */}
       
       {/* <Divider /> */}
-      <div style={{backgroundColor:'#B4D4FF', width:'100%', height:'100vh', padding:'5%', }}>
+      <div style={{ width:'100%', height:'100vh', backgroundSize: 'cover', backgroundImage:`url("/login-bg2.jpg")` }}>
 
         
 
            
-                <div style={{height:'100%', borderRadius:'1%',width:'100%',display:"flex", padding:'10px',flexDirection:'column',  alignItems:'center'}}>
+                <div style={{height:'100%', backgroundColor:'rgb(255,255,255,0.6)',padding:'6%',borderRadius:'1%',width:'100%',display:"flex",flexDirection:'column',  alignItems:'center'}}>
                     <h2 style={{margin:'auto',zIndex:'2'}}>Begin a Journey</h2>
-                    <img style={{left:'0px', zIndex:'1',position:'fixed', width:'10%'}} src="/planeTBg.png"/>
+                    {/* <img src='/loginplane.png' style={{position:'fixed'}} height={100}/> */}
+                    
                         <form style={{paddingTop:'20px ', height:'100%',display:'flex',flexDirection:'column',alignItems:'center', justifyContent:'space-evenly'}}>
                             <div style={{}}>
                             <TextField
+                              style={{color:'white'}}
                                 id="outlined-controlled"
                                 label="Username"
                                 value={username}
@@ -60,7 +62,7 @@ export default function Loginn() {
                                 <Button variant="contained">login</Button>
                             </div>
                             <div style={{}}>
-                                <p>do not have account? <a href='/signup'><Button >signup</Button></a></p>
+                                <p>do not have account? <a href='/signup'><Button  variant='outlined'>signup</Button></a></p>
                             
                             </div>
                         </form>

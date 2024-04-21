@@ -1,0 +1,30 @@
+.flight-path {
+    position: relative;
+    color: rgb(149, 149, 240);
+  }
+  
+  .flight-line {
+    color: grey;
+    stroke: black;
+    stroke-dasharray: 5;
+  }
+  
+  .plane-icon {
+    position: absolute;
+    top: calc(50% - 12px); /* Adjust according to the size of your plane icon */
+    left: 0;
+    
+    transform: rotate(45deg);
+    animation: fly 2s linear infinite; /* Adjust animation duration as needed */
+  }
+  
+  @keyframes fly {
+    0% {
+        transform: translateX(0);
+      }
+      
+      100% {
+        transform: translateX(250px);
+      }
+  }
+  
